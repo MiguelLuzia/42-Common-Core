@@ -6,13 +6,13 @@
 /*   By: mitavare <mitavare@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/22 08:15:08 by mitavare          #+#    #+#             */
-/*   Updated: 2026/10/22 08:22:05 by mitavare         ###   ########.fr       */
+/*   Updated: 2026/10/22 08:33:07 by mitavare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
 	unsigned char	*p;
 	size_t			i;

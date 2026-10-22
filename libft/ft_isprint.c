@@ -6,22 +6,13 @@
 /*   By: mitavare <mitavare@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/21 12:20:00 by mitavare          #+#    #+#             */
-/*   Updated: 2026/10/21 12:22:17 by mitavare         ###   ########.fr       */
+/*   Updated: 2026/10/22 07:59:29 by mitavare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(char *str)
+int	ft_isprint(int c)
 {
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		if (!(32 <= str[i] && str[i] <= 126))
-			return (0);
-		i++;
-	}
-	return (1);
+	return (32 <= c && c <= 126);
 }

@@ -6,22 +6,13 @@
 /*   By: mitavare <mitavare@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/21 12:16:44 by mitavare          #+#    #+#             */
-/*   Updated: 2026/10/21 12:22:10 by mitavare         ###   ########.fr       */
+/*   Updated: 2026/10/22 07:58:51 by mitavare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isascii(char *str)
+int	ft_isascii(int c)
 {
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		if (!(0 <= str[i] && str[i] <= 127))
-			return (0);
-		i++;
-	}
-	return (1);
+	return (0 <= c && c <= 127);
 }

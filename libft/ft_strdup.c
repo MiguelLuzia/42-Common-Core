@@ -6,15 +6,15 @@
 /*   By: mitavare <mitavare@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/21 11:28:46 by mitavare          #+#    #+#             */
-/*   Updated: 2026/10/21 11:30:12 by mitavare         ###   ########.fr       */
+/*   Updated: 2026/10/22 08:01:08 by mitavare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(char *src)
+char	*ft_strdup(const char *src)
 {
-	int		i;
+	size_t	i;
 	char	*copy;
 
 	copy = malloc(ft_strlen(src) + 1);

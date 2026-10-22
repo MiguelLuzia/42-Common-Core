@@ -6,22 +6,13 @@
 /*   By: mitavare <mitavare@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/21 12:12:34 by mitavare          #+#    #+#             */
-/*   Updated: 2026/10/21 12:14:55 by mitavare         ###   ########.fr       */
+/*   Updated: 2026/10/22 07:56:41 by mitavare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(char *str)
+int	ft_isdigit(int c)
 {
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		if (!('0' <= str[i] && str[i] <= '9'))
-			return (0);
-		i++;
-	}
-	return (1);
+	return (('0' <= c && c <= '9'));
 }

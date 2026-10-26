@@ -6,7 +6,7 @@
 /*   By: mitavare <mitavare@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/21 11:14:21 by mitavare          #+#    #+#             */
-/*   Updated: 2026/10/22 11:54:15 by mitavare         ###   ########.fr       */
+/*   Updated: 2026/10/26 14:19:03 by mitavare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,6 @@ char			*ft_strnstr(const char *s, const char *to_find, size_t len);
 int				ft_atoi(const char *str);
 void			*ft_calloc(size_t nmemb, size_t size);
 char			*ft_strdup(const char *src);
+char			*ft_substr(char const *s, unsigned int start, size_t len);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: mitavare <mitavare@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/21 11:14:21 by mitavare          #+#    #+#             */
-/*   Updated: 2026/10/28 12:13:01 by mitavare         ###   ########.fr       */
+/*   Updated: 2026/10/28 14:43:34 by mitavare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,5 +64,6 @@ unsigned int	ft_lstsize(t_list *lst);
 t_list			*ft_lstlast(t_list *lst);
 void			ft_lstadd_back(t_list **lst, t_list *new);
 void			ft_lstdelone(t_list *lst, void (*del)(void *));
+void			ft_lstclear(t_list **lst, void (*del)(void *));
 
 #endif

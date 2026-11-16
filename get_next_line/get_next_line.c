@@ -6,20 +6,11 @@
 /*   By: mitavare <mitavare@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/10 14:59:34 by mitavare          #+#    #+#             */
-/*   Updated: 2026/11/11 18:21:30 by mitavare         ###   ########.fr       */
+/*   Updated: 2026/11/16 11:44:15 by mitavare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
-static char	*join_free(char *s1, char *s2)
-{
-	char	*tmp;
-
-	tmp = ft_strjoin(s1, s2);
-	free(s1);
-	return (tmp);
-}
 
 static char	*read_to_stash(int fd, char *stash)
 {
@@ -28,7 +19,10 @@ static char	*read_to_stash(int fd, char *stash)
 
 	buffer = malloc(BUFFER_SIZE + 1);
 	if (!buffer)
+	{
+		free(stash);
 		return (NULL);
+	}
 	bytes_read = 1;
 	while (stash && bytes_read > 0 && !ft_strchr(stash, '\n'))
 	{
@@ -36,7 +30,7 @@ static char	*read_to_stash(int fd, char *stash)
 		if (bytes_read < 0)
 			break ;
 		buffer[bytes_read] = '\0';
-		stash = join_free(stash, buffer);
+		stash = ft_strjoin_free(stash, buffer);
 	}
 	free(buffer);
 	if (bytes_read < 0)

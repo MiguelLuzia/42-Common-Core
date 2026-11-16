@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c.c                            :+:      :+:    :+:   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mitavare <mitavare@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/10 14:59:49 by mitavare          #+#    #+#             */
-/*   Updated: 2026/11/11 18:03:52 by mitavare         ###   ########.fr       */
+/*   Updated: 2026/11/16 11:43:39 by mitavare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,13 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s)
+	while (*s != (char)c)
 	{
-		if (*s == c)
-			return ((char *)s);
+		if (*s == '\0')
+			return (NULL);
 		s++;
 	}
-	if (c == 0 && *s == 0)
-		return ((char *)s);
-	return (NULL);
+	return ((char *)s);
 }
 
 static void	ft_copy(const char *src, char *dest, size_t *i)
@@ -38,7 +36,7 @@ static void	ft_copy(const char *src, char *dest, size_t *i)
 	}
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin_free(char *s1, char *s2)
 {
 	size_t	i;
 	size_t	size;
@@ -48,10 +46,14 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size = ft_strlen(s1) + ft_strlen(s2);
 	str = malloc(size + 1);
 	if (!str)
+	{
+		free(s1);
 		return (str);
+	}
 	ft_copy(s1, str, &i);
 	ft_copy(s2, str, &i);
 	str[i] = '\0';
+	free(s1);
 	return (str);
 }
 

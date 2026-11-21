@@ -6,12 +6,12 @@
 /*   By: mitavare <mitavare@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/21 10:39:32 by mitavare          #+#    #+#             */
-/*   Updated: 2026/11/21 10:39:33 by mitavare         ###   ########.fr       */
+/*   Updated: 2026/11/21 11:25:21 by mitavare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
 
 # include <unistd.h>
 # include <stdlib.h>

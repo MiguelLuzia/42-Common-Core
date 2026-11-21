@@ -24,6 +24,9 @@ The goal of the project is to learn about **static variables**, **file descripto
 | `get_next_line.c` | `get_next_line` and its static helper functions |
 | `get_next_line_utils.c` | `ft_strlen`, `ft_strchr`, `ft_strdup`, `ft_strjoin_free` |
 | `get_next_line.h` | Prototypes, includes and the default `BUFFER_SIZE` |
+| `get_next_line_bonus.c` | Bonus version of `get_next_line`: same implementation as the mandatory part, using a single static variable (one file descriptor at a time) |
+| `get_next_line_utils_bonus.c` | Bonus version of the helper functions (same as the mandatory ones) |
+| `get_next_line_bonus.h` | Bonus version of the header: prototypes, includes and the default `BUFFER_SIZE` |
 
 ## Instructions
 
@@ -111,7 +114,7 @@ Each call does three steps, each one in its own helper function:
 
 - Each `read` appends to the stash through `ft_strjoin_free`, which copies the whole stash again. For a line of length `L`, that gives roughly `O(L² / BUFFER_SIZE)` copying in the worst case (very small buffers and very long lines). For normal inputs and reasonable buffer sizes this is negligible, and the simplicity was preferred over a more complex scheme.
 - Searching for `\n` with `ft_strchr` after each read re-scans the stash from the start, which has the same kind of cost.
-- This version uses **a single static stash**, so it is meant to be used with **one file descriptor at a time**. Supporting several file descriptors at once (the bonus part) would require one stash per fd, for example a static array indexed by `fd`.
+- This version uses **a single static stash**, so it is meant to be used with **one file descriptor at a time**.
 
 ## Resources
 
